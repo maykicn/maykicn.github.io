@@ -1,0 +1,469 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Poppins:wght@400;500;600;700;800;900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&family=Lato:wght@100&family=Poppins:wght@400;500;600;700;800;900&display=swap');
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+}
+p{
+    font-family: 'Poppins', sans-serif;
+}
+a,
+a:link,
+a:visited{
+    text-decoration: none;
+    outline: none;
+    border: none;
+}
+
+ul,
+li{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+section,
+span,
+p{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+
+}
+
+.container{
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.header-menu{
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 1200;
+}
+
+.header{
+    background-image: url(./images/sky.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+}
+.header-navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 0;
+}
+.header-logo{
+    font-size: 16px;
+    letter-spacing: 2px;
+    border-bottom: 5px solid black;
+    border-radius: 35px;
+    padding-bottom: 5px;
+
+}
+ul{
+    display: flex;
+    
+}
+
+li{
+    margin-left: 27px;
+    flex-basis: 25%;
+}
+a{
+    color:black;
+    font-weight: bold;
+    font-size: 15px;
+}
+.header-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+h1{
+    font-size: 8.5rem;
+    font-weight: 100;
+    line-height: 0.4;
+    letter-spacing: 2px;
+    font-family: 'Herr Von Muellerhoff', cursive;
+    color:red;
+}
+.first-letter{
+    font-size: 10.3rem;
+    font-family: 'Herr Von Muellerhoff', cursive;
+    color: red; /* for Welcome */
+}
+h3{
+    margin-bottom: 25px;
+    font-size: 22px;
+}
+.btn-sky{
+    display: block;
+    background-color: red; /* Before animation*/
+    color: white;
+    padding: 10px 15px;
+    border-top-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+    position: relative;/* because of line 113*/
+    overflow: hidden; /* prevent to overflow :after*/
+}
+
+/* is about get started action with hover*/
+.btn-sky::after{
+    content: "FLY"; /* if you dont write content :after will not work*/
+    position: absolute;/* if I use here absolute I have to add relative in main container*/
+    top: 100%;
+    left: 0;
+    background-color: aqua;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s;
+}
+.btn-sky:hover::after{
+    top: 0;
+}
+
+
+
+/* ABOUT */
+#about{
+    margin-bottom: 250px;
+}
+.title{
+    margin: 60px 0 ;
+}
+.title h2{
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    color:blue;
+    font-size: 30px;
+    font-weight: 600;
+}
+.title h2::after{
+    content: "";
+    width: 30px;
+    height: 3px;
+    background-color: rgb(49, 34, 186);
+    margin: 0 auto;
+    display: block; /*when I use display  it starts to look*/
+    margin-top: 10px;
+}
+
+/*Align with picture and text*/
+.about-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between ;
+    flex-wrap: wrap;
+}
+
+/*Make picture content smaller */
+.about-img{
+    width: 50%;
+    margin-top: 75px;
+}
+
+/* make picture smaller*/
+.about-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5%;
+}
+.about-text{
+    font-size: 1.5em;
+    line-height: 1.5em;
+    width: 40%;
+    margin-top: 75px;  
+}
+h4{
+      margin-bottom: 25px;
+      text-align: center;
+      font-size: 40px;
+      color: blue;
+      font-family: 'Herr Von Muellerhoff', cursive;  
+      letter-spacing: 0.5rem ;
+      font-weight: 100 ;
+}
+.about-text p{
+     font-size: 15px;
+     text-align: center;
+     color: #2c2727;
+}
+
+
+/* PORTFOLIO */
+#portfolio{
+    width: 90%;
+    margin-bottom: 250px;
+    margin: 0 auto;
+}
+#subtitle{
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    color:navy;
+    font-size: 25px;
+    font-weight: 600;
+}
+.portfolio-items{
+    list-style-type: none;
+    margin: 10px 10px;
+    padding: 0;
+    height: 35vh;
+    position: relative;
+    border-radius: 5%;
+    overflow: hidden;
+    mask-image: radial-gradient(white,black);
+    border: 1px solid lightblue;
+    
+}
+.portfolio-items img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+      
+}
+.overlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(227, 225, 222);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    opacity: 0.8;
+    color: black;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+.overlay p{
+    font-size: 15px;
+    text-align:justify;
+    margin: auto 15px;
+}
+.portfolio-items:hover .overlay{
+    top: 0;
+    
+}
+.portfolio-items:hover img{
+    transform: scale(1.1);
+    
+}
+.portfolio-items:hover{
+    border-radius: 5%;
+    
+}
+/* CONTACT */
+.contact{
+    padding: 0;
+}
+.contact-item{
+    display: flex;
+    align-items: center;
+    flex-basis: 33%;
+    flex-direction: column;
+    margin-bottom: 100px;
+}
+
+.contact-item i{
+    font-size: 25px;
+    margin-bottom: 10px;
+    color: navy;
+}
+.contact-item p{
+    font-size: 14px;
+    line-height: 33 px;
+}
+
+/* FOOTER */
+
+.footer-container{
+    background-color:rgb(107, 104, 104);
+    padding: 20px 0;
+}
+.footer{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 30vh;
+}
+.footer-title{
+    margin: -10px 0 ;
+}
+.footer-title h2{
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    color:navy;
+    font-size: 20px;
+    font-weight: 600;
+}
+.footer-title h2::after{
+    content: "";
+    width: 30px;
+    height: 3px;
+    background-color:navy;
+    margin: 0 auto;
+    display: block; /*when I use display  it starts to look*/
+    margin-top: 10px;
+}
+.footer:nth-child(1) p{
+    color: white;
+    font-size: 12px;
+    text-align: center;
+}
+.footer-icon{
+    display: flex;
+    flex-basis:33%;
+}
+.footer-icon i{
+    margin: 0 50px;
+    font-size: 50px;
+    color: white;
+    
+}
+#contact p{
+    font-size: 1em;
+}
+
+/* RESPONSIVE */
+
+/* HAMBURGER ICON START */
+#menu-icon{
+    font-size: 25px;
+    display: none;
+    margin-left: 20px;
+}
+
+/* HAMBURGER ICON FINISH */
+
+/* HEADER MENU START */
+@media only screen and (max-width:768px){
+     .header-menu ul{
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         flex-direction: column;
+         position: absolute; /* I will use top */
+         top: 100px;
+         left: 0;
+         background-color: lightblue;
+         width: 100%;
+         overflow: hidden;
+         transition: max-height .7 s;
+         opacity: 50%;
+     }
+
+     .header-menu ul li{
+        margin-right: 50px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+     }
+     .header-menu ul li a{
+         color: blue;
+     }
+     .header-menu #menu-icon{
+         display: block;
+         cursor: pointer;
+     }
+     
+}
+/* HEADER MENU FINISH */
+
+/* ABOUT  START */
+
+@media only screen and (max-width:1000px){
+
+    .about-img{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .about-text{
+        width: 100%;
+    }
+
+    #about {
+        margin-bottom: 150px;
+    }
+
+
+}
+
+/* ABOUT  FINISH */
+
+/* PORTFOLIO  START */
+
+
+@media only screen and (max-width:1000px){
+    .portfolio{
+         flex-wrap: wrap;
+         justify-content: space-around;
+     }
+     .portfolio li{
+         flex-basis: 42%;
+     }
+ }
+ 
+ @media only screen and (max-width:600px){
+     .portfolio{
+          flex-wrap: wrap;
+      }
+      .portfolio li{
+        flex-basis: 100%;
+      }
+  }
+
+/* PORTFOLIO  FINISH */
+
+/* CONTACT  START */
+
+
+@media only screen and (max-width:600px){
+    .contact-content{
+        flex-direction: column;
+    }
+    .contact-item{
+        margin-top: 2em;
+    }
+    .contact-item{
+        width: 100%;
+        text-align: center;
+    }
+ }
+
+ /* CONTACT  FINISH */
+
+ /* FOOTER  START */
+
+
+@media only screen and (max-width:700px){
+    .footer-icon{
+        
+        margin-left:-27px;
+    }
+    
+ }
+
+ /* FOOTER  FINISH */
